@@ -106,12 +106,65 @@
       console.log(request_url)
 
       var request = new XMLHttpRequest()
-      request.open('GET', request_url)
+      request.open('GET', request_url, false)
 
-      result = request.send()
-      console.log(result)      
-      // OK, this is still undefined. How can we fix that? 
-      // How can we get a basic result?
+      request.send()
+      console.log(request) // it's an XMLHttpRequest object with some paraters...
+
+      console.log(request.status)
+      console.log(request.responseText)
+      console.log(request['response'])
+
+      // I can see in the console that there is useful data here, looking like this:
+      /* 
+              XMLHttpRequest { onreadystatechange: null, readyState: 1, timeout: 0, withCredentials: false, upload: XMLHttpRequestUpload, responseURL: "", status: 0, statusText: "", responseType: "", response: "" }
+        ​
+        mozAnon: false
+        ​
+        mozSystem: false
+        ​
+        onabort: null
+        ​
+        onerror: null
+        ​
+        onload: null
+        ​
+        onloadend: null
+        ​
+        onloadstart: null
+        ​
+        onprogress: null
+        ​
+        onreadystatechange: null
+        ​
+        ontimeout: null
+        ​
+        readyState: 4
+        ​
+        response: "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<rsp stat=\"ok\">\n<photos page=\"1\" pages=\"753\" perpage=\"100\" total=\"75290\">\n\t<photo id=\"51678621851\" owner=\"139334374@N04\" secret=\"d95ef84194\" server=\"65535\" farm=\"66\" title=\"Jupiter Lune Saturne Vénus\" ispublic=\"1\" isfriend=\"0\" isfamily=\"0\" />\n\t<photo id=\"51679502165\" owner=\"139334374@N04\" secret=\"b139f4a313\" server=\"65535\" farm=\"66\" title=\"Jupiter Lune Saturne Vénus\" ispublic=\"1\" isfriend=\"0\" isfamily=\"0\" />\n\t<photo id=\"51677816882\" owner=\"139334374@N04\" secret=\"4cd8854d44\" server=\"65535\" farm=\"66\" title=\"Jupiter Lune Saturne Vénus\" ispublic=\"1\" isfriend=\"0\" isfamily=\"0\" />\n\t<photo id=\"51677771232\" owner=\"97154474@N00\" secret=\"de93497bd1\" server=\"65535\" farm=\"66\" title=\"Regent's Park Sprockets-004\" ispublic=\"1\" isfriend=\"0\" isfamily=\"0\" />\n\t<photo id=\"51679456560\" owner=\"97154474@N00\" secret=\"e3ac496e1f\" server=\"65535\" farm=\"66\" title=\"Regent's Park Sprockets-003\" ispublic=\"1\" isfriend=\"0\" isfamily=\"0\" />\n\t<photo id=\"51678577126\" owner=\"97154474@…"
+        ​
+        responseText: "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<rsp stat=\"ok\">\n<photos page=\"1\" pages=\"753\" perpage=\"100\" total=\"75290\">\n\t<photo id=\"51678621851\" owner=\"139334374@N04\" secret=\"d95ef84194\" server=\"65535\" farm=\"66\" title=\"Jupiter Lune Saturne Vénus\" ispublic=\"1\" isfriend=\"0\" isfamily=\"0\" />\n\t<photo id=\"51679502165\" owner=\"139334374@N04\" secret=\"b139f4a313\" server=\"65535\" farm=\"66\" title=\"Jupiter Lune Saturne Vénus\" ispublic=\"1\" isfriend=\"0\" isfamily=\"0\" />\n\t<photo id=\"51677816882\" owner=\"139334374@N04\" secret=\"4cd8854d44\" server=\"65535\" farm=\"66\" title=\"Jupiter Lune Saturne Vénus\" ispublic=\"1\" isfriend=\"0\" isfamily=\"0\" />\n\t<photo id=\"51677771232\" owner=\"97154474@N00\" secret=\"de93497bd1\" server=\"65535\" farm=\"66\" title=\"Regent's Park Sprockets-004\" ispublic=\"1\" isfriend=\"0\" isfamily=\"0\" />\n\t<photo id=\"51679456560\" owner=\"97154474@N00\" secret=\"e3ac496e1f\" server=\"65535\" farm=\"66\" title=\"Regent's Park Sprockets-003\" ispublic=\"1\" isfriend=\"0\" isfamily=\"0\" />\n\t<photo id=\"51678577126\" owner=\"97154474@…"
+        ​
+        responseType: ""
+        ​
+        responseURL: "https://api.flickr.com/services/rest/?method=flickr.photos.s…key=4e258a4396bf5ba0448b2e2fe574034e&tags=saturn&format=rest"
+        ​
+        responseXML: XMLDocument { … }
+        ​
+        status: 200
+        ​
+        statusText: "OK"
+        ​
+        timeout: 0
+        ​
+        upload: XMLHttpRequestUpload { onloadstart: null, onprogress: null, onabort: null, … }
+        ​
+        withCredentials: false
+        ​
+        <prototype>: XMLHttpRequestPrototype { open: open(), setRequestHeader: setRequestHeader(), send: send(), … }
+      */
+
+        // 
 
     </script>
   </body>

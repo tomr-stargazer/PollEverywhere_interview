@@ -38,7 +38,7 @@
 
       // Now let's start working on seeing how to make progress on each of these.
 
-      flickr.photos.search
+      // flickr.photos.search
 
       // this page is helpful:
       // https://www.flickr.com/services/api/explore/flickr.photos.search
@@ -69,6 +69,29 @@
       // So, I can see the structure here of this response.
       // And the URL of the search looks like this:
       // URL: https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=4e258a4396bf5ba0448b2e2fe574034e&tags=saturn&format=rest
+
+      // So - how do I get a similar thing to happen from here? 
+      // We are going to hard-code 'Saturn' before we try to handle user input.
+
+      console.log('TEST CONSOLE')
+
+      // Reading flickr's API documentation. Looking for examples of scripts that might 
+      // do some of what I'm trying to do - just to have some syntax to hang onto.
+      // 
+      // I've searched for online documentation; the CodeTime channel on YouTube seems 
+      // to have examples of working with the Flickr API.
+
+      // This seems too complicated. Really, really basic advice I need: how to use 
+      // JS to connect with an API at all?
+
+      // We're working from this document to get us started:
+      // https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/
+
+      // Let's try this! I hope it works.
+      var request = new XMLHttpRequest()
+      request.open('GET', flickrAPI, user=key) // can I do this?
+
+      request.send()
 
     </script>
   </body>

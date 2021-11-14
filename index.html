@@ -38,6 +38,37 @@
 
       // Now let's start working on seeing how to make progress on each of these.
 
+      flickr.photos.search
+
+      // this page is helpful:
+      // https://www.flickr.com/services/api/explore/flickr.photos.search
+
+      // I am testing how this is going to work with that page before I try to figure 
+      // out how to call APIs in a script.
+
+      // I passed a simple search: 
+      // api_key = '4e258a4396bf5ba0448b2e2fe574034e'
+      // tags = 'saturn'
+
+      // and got back the following:
+      /*
+        <?xml version="1.0" encoding="utf-8" ?>
+        <rsp stat="ok">
+          <photos page="1" pages="784" perpage="100" total="78389">
+            <photo id="51678621851" owner="139334374@N04" secret="d95ef84194" server="65535" farm="66" title="Jupiter Lune Saturne Vénus" ispublic="1" isfriend="0" isfamily="0" />
+            <photo id="51679502165" owner="139334374@N04" secret="b139f4a313" server="65535" farm="66" title="Jupiter Lune Saturne Vénus" ispublic="1" isfriend="0" isfamily="0" />
+            <photo id="51677816882" owner="139334374@N04" secret="4cd8854d44" server="65535" farm="66" title="Jupiter Lune Saturne Vénus" ispublic="1" isfriend="0" isfamily="0" />
+            <photo id="51677771232" owner="97154474@N00" secret="de93497bd1" server="65535" farm="66" title="Regent's Park Sprockets-004" ispublic="1" isfriend="0" isfamily="0" />
+            <photo id="51679456560" owner="97154474@N00" secret="e3ac496e1f" server="65535" farm="66" title="Regent's Park Sprockets-003" ispublic="1" isfriend="0" isfamily="0" />
+
+            ...
+            ...
+            ...
+      */
+
+      // So, I can see the structure here of this response.
+      // And the URL of the search looks like this:
+      // URL: https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=4e258a4396bf5ba0448b2e2fe574034e&tags=saturn&format=rest
 
     </script>
   </body>

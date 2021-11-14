@@ -107,6 +107,8 @@
 
       var request = new XMLHttpRequest()
       request.open('GET', request_url, false)
+      // I was inspired to put `false` based on a comment in this StackOverflow thread:
+      // https://stackoverflow.com/questions/36975619/how-to-call-a-rest-web-service-api-from-javascript
       // By specifying 'false', I seem to have triggered the following warning:
       // Synchronous XMLHttpRequest on the main thread is deprecated because of its detrimental effects to the end user’s experience. For more help http://xhr.spec.whatwg.org/
       // For now I'm going with the simplest possible solution that works.
@@ -121,8 +123,26 @@
       // Now: how do I display the text to the screen? This is obviously not, like, 
       // the desired solution to the problem, but it is ... something!
 
+      // StackOverflow to the rescue:
+      // https://stackoverflow.com/questions/20309539/how-to-display-text-in-javascript
       new_text = document.createTextNode( response_text )
       document.body.appendChild( new_text ); 
+
+      /* 
+
+      The above shows what I was able to do in one hour.
+      What do I think comes next?
+      - Parsing the output that comes in the variable `new_text` 
+        (I assume through some kind of JSON parsing function)
+      - Retrieving thumbnails of the relevant images
+      - Displaying them in a grid on the page 
+        (HTML stuff, possibly image manipulation/resizing)
+      - Getting the view count of each image and placing that as a text overlay on 
+        each thumbnail 
+      - Obviously, making this whole thing responsive to user input rather than 
+        hardcoding the search 'saturn'.
+
+      */
 
     </script>
   </body>

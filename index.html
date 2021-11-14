@@ -94,6 +94,25 @@
       result = request.send()
       console.log(result) // currently returns undefined
 
+      // Actually. Let's just concatenate the arguments together in the url. 
+      // First: does javascript allow for addition to make a longer string?
+      console.log(flickrAPI)
+      console.log(flickrAPI+"?method=flickr.photos.search")
+
+      // great. Let's play with that.
+
+      request_url = flickrAPI + "?method=flickr.photos.search&api_key=4e258a4396bf5ba0448b2e2fe574034e&tags=saturn&format=rest"
+
+      console.log(request_url)
+
+      var request = new XMLHttpRequest()
+      request.open('GET', request_url)
+
+      result = request.send()
+      console.log(result)      
+      // OK, this is still undefined. How can we fix that? 
+      // How can we get a basic result?
+
     </script>
   </body>
 </html>

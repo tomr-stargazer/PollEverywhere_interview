@@ -91,7 +91,8 @@
       var request = new XMLHttpRequest()
       request.open('GET', flickrAPI, user=key) // can I do this?
 
-      request.send()
+      result = request.send()
+      console.log(result) // currently returns undefined
 
     </script>
   </body>

@@ -101,7 +101,7 @@
 
       // great. Let's play with that.
 
-      request_url = flickrAPI + "?method=flickr.photos.search&api_key=4e258a4396bf5ba0448b2e2fe574034e&tags=saturn&format=rest"
+      request_url = flickrAPI + "?method=flickr.photos.search&api_key=4e258a4396bf5ba0448b2e2fe574034e&tags=saturn&format=json&nojsoncallback=1&page=1&per_page=10"
 
       console.log(request_url)
 
@@ -127,6 +127,33 @@
       // https://stackoverflow.com/questions/20309539/how-to-display-text-in-javascript
       new_text = document.createTextNode( response_text )
       document.body.appendChild( new_text ); 
+
+      json_object = JSON.parse(response_text)
+
+      console.log(json_object)
+
+      // get one image on page
+
+      first_object = json_object['photos']['photo'][0]
+      server_id = first_object['server']
+      id = first_object['id']
+      secret = first_object['secret']
+
+      image_url = `https://live.staticflickr.com/${server_id}/${id}_${secret}.jpg`
+
+      console.log(image_url)
+
+      // gets the image from a specific url
+      // puts it on the page
+
+      some_html_to_render = `<img src='${image_url}'>`
+      console.log(some_html_to_render)
+
+      image_element = document.createElement( 'img' )
+      image_element.src = image_url
+      document.body.appendChild( image_element );       
+
+      // do a for loop //
 
       /* 
 
